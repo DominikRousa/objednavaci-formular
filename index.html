@@ -9,37 +9,66 @@
 <body>
     <div class="container">
         <h1>Online Reservation</h1>
-        <form id="reservationForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="peopleCount">Number of People:</label>
-            <input type="number" id="peopleCount" name="peopleCount" required min="1">
-            
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
+        <div id="authSection">
+            <form id="loginForm">
+                <h2>Login</h2>
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" name="username" required>
+                
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
 
-            <label for="service">Service:</label>
-            <select id="service" name="service" required>
-                <option value="Service 1">Service 1</option>
-                <option value="Service 2">Service 2</option>
-                <option value="Service 3">Service 3</option>
-            </select>
+            <form id="registerForm">
+                <h2>Register</h2>
+                <label for="registerUsername">Username:</label>
+                <input type="text" id="registerUsername" name="username" required>
+                
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="password" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </div>
 
-            <label for="repeat">Repeat:</label>
-            <select id="repeat" name="repeat">
-                <option value="none">None</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select>
-            
-            <button type="submit">Reserve</button>
-        </form>
-        <h2>Reservations</h2>
-        <ul id="reservationsList"></ul>
+        <div id="reservationSection" style="display:none;">
+            <div style="display: flex; justify-content: end;">
+                <button id="logoutButton">Logout</button>
+            </div>
+            <form id="reservationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="peopleCount">Number of People:</label>
+                <input type="number" id="peopleCount" name="peopleCount" required min="1">
+                
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+    
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option value="Service 1">Service 1</option>
+                    <option value="Service 2">Service 2</option>
+                    <option value="Service 3">Service 3</option>
+                </select>
+    
+                <label for="repeat">Repeat:</label>
+                <select id="repeat" name="repeat">
+                    <option value="none">None</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                
+                <button type="submit">Reserve</button>
+            </form>
+            <h2>Reservations</h2>
+            <ul id="reservationsList"></ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
