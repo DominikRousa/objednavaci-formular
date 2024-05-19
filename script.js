@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         const name = document.getElementById('name').value;
-        const count = document.getElementById('count').value;
+        const peopleCount = document.getElementById('peopleCount').value;
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
-        
-        const reservation = { name, count, date, time };
+        const service = document.getElementById('service').value;
+        const repeat = document.getElementById('repeat').value;
+
+        const reservation = { name, peopleCount, date, time, service, repeat };
         
         let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
         reservations.push(reservation);
@@ -25,23 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
         reservations.forEach((reservation, index) => {
             const li = document.createElement('li');
-            li.textContent = `Name: ${reservation.name}, Count: ${reservation.count}, Date: ${reservation.date}, Time: ${reservation.time}`;
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', () => {
-                deleteReservation(index);
-            });
-            li.appendChild(deleteButton);
+            li.innerHTML = `
+                <span>Name: ${reservation.name}, People: ${reservation.peopleCount}, Date: ${reservation.date}, Time: ${reservation.time}, Service: ${reservation.service}, Repeat: ${reservation.repeat}</span>
+                <button onclick="deleteReservation(${index})">Delete</button>
+            `;
             reservationsList.appendChild(li);
         });
     }
 
-    function deleteReservation(index) {
+    window.deleteReservation = (index) => {
         let reservations = JSON.parse(localStorage.getItem('reservations')) || [];
         reservations.splice(index, 1);
         localStorage.setItem('reservations', JSON.stringify(reservations));
         displayReservations();
-    }
+    };
 
     displayReservations();
 });
