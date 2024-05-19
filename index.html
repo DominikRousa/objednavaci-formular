@@ -3,58 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Reservation</title>
     <link rel="stylesheet" href="ui.css">
-    <title>Restaurace</title>
 </head>
 <body>
-    <div class="mainPage">
-        <div class="navbar">
-            <ul><li><a href=""><img src="" alt="" height="26px">Logo</a></li></ul>
-            <ul>
-                <li><a href="" class="nav-selected">Domu</a></li>
-                <li><a href="#about" class="nav-light">O nás</a></li>
-                <li><a href="#projects" class="nav-light">Rezervace</a></li>
-                <li><a href="" class="nav-light">Kontakt</a></li>
-            </ul>
+    <div class="container">
+        <h1>Online Reservation</h1>
+        <div class="form" id="reservationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="count">Count:</label>
+            <input type="number" id="count" name="count" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <button type="submit">Reserve</button>
         </div>
-        <div class="mainContainer">
-
-            <div class="days">
-                <div class="day" onclick="addToDay(1)">1</div>
-                <div class="day" onclick="addToDay(2)">2</div>
-                <div class="day" onclick="addToDay(3)">3</div>
-                <div class="day" onclick="addToDay(4)">4</div>
-                <div class="day" onclick="addToDay(5)">5</div>
-                <div class="day" onclick="addToDay(6)">6</div>
-                <div class="day" onclick="addToDay(7)">7</div>
-                <div class="day" onclick="addToDay(8)">8</div>
-                <div class="day" onclick="addToDay(9)">9</div>
-                <div class="day" onclick="addToDay(10)">10</div>
-                <div class="day" onclick="addToDay(11)">11</div>
-                <div class="day" onclick="addToDay(12)">12</div>
-                <div class="day" onclick="addToDay(13)">13</div>
-                <div class="day" onclick="addToDay(14)">14</div>
-                <div class="day" onclick="addToDay(15)">15</div>
-                <div class="day" onclick="addToDay(16)">16</div>
-                <div class="day" onclick="addToDay(17)">17</div>
-                <div class="day" onclick="addToDay(18)">18</div>
-                <div class="day" onclick="addToDay(19)">19</div>
-                <div class="day" onclick="addToDay(20)">20</div>
-                <div class="day" onclick="addToDay(21)">21</div>
-                <div class="day" onclick="addToDay(22)">22</div>
-                <div class="day" onclick="addToDay(23)">23</div>
-                <div class="day" onclick="addToDay(24)">24</div>
-                <div class="day" onclick="addToDay(25)">25</div>
-                <div class="day" onclick="addToDay(26)">26</div>
-                <div class="day" onclick="addToDay(27)">27</div>
-                <div class="day" onclick="addToDay(28)">28</div>
-                <div class="day" onclick="addToDay(29)">29</div>
-                <div class="day" onclick="addToDay(30)">30</div>
-                <div class="day" onclick="addToDay(31)">31</div>
-            </div>
-        </div>
+        <h2>Reservations</h2>
+        <ul id="reservationsList"></ul>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
